@@ -1,0 +1,17 @@
+# Icarus Verilog outputs
+*.vvp
+*.vcd
+
+# Other simulation files
+*.fst
+*.log
+*.out
+
+# Python cache files
+__pycache__/
+*.pyc
+
+# Editor / OS generated files
+.vscode/
+.DS_Store
+Thumbs.db
