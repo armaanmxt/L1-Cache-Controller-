@@ -1,8 +1,11 @@
-localparam int NUM_LINES   = 64;
-localparam int OFFSET_BITS = 4;
-localparam int INDEX_BITS  = 6;
-localparam int TAG_BITS    = 22;
+module cache_controller (
+    input logic clk, 
+    input logic rst_n,          //FSM back to IDLE and all VALID bits to 0
 
-logic [127:0] data_array [0:63];
-logic [21:0]  tag_array  [0:63];
-logic         valid_array[0:63];
+    //CPU interface (this is for communicating with the CPU)
+    input logic cpu_req_valid,
+    output logic cpu_req_ready,
+    input logic [31:0] cpu_addr,
+
+
+)
