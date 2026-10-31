@@ -10,12 +10,16 @@ module cache_controller (
     output logic cpu_resp_valid,
     output logic cpu_rdata,         //
 
+    //Main memory interface (cache miss)
     output logic         mem_req_valid,
     output logic [31:0]  mem_req_addr,
 
     input  logic         mem_resp_valid,
     input  logic [127:0] mem_resp_data
+);
 
+    //main cache logic will go here
 
+    
 
-)
+endmodule
