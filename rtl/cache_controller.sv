@@ -8,7 +8,7 @@ module cache_controller (
     input logic [31:0] cpu_addr,   // cpu is accessing a 32 bit address, which is split apart into offset, index, and tag bits
 
     output logic cpu_resp_valid,
-    output logic cpu_rdata,         //
+    output logic [31:0] cpu_rdata,         //the actual data word that will be read
 
     //Main memory interface (cache miss)
     output logic         mem_req_valid,
@@ -20,6 +20,12 @@ module cache_controller (
 
     //main cache logic will go here
 
-    
+    // Cache configuration
+    localparam int NUM_LINES   = 64;
+    localparam int OFFSET_BITS = 4;
+    localparam int INDEX_BITS  = 6;
+    localparam int TAG_BITS    = 22;
+
+
 
 endmodule
