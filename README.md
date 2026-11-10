@@ -3,6 +3,6 @@
 The controller uses a direct mapped cache with tag comparison,
 valid bit checking, and a finite state machine for cache refills.
 
-![L1 Cache Controller Architecture](docs/architecture.png)
+![L1 Cache Controller Architecture](docs/cachearchitecture.png)
 
 Made the diagram in excalidraw.com
