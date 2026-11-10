@@ -42,5 +42,13 @@ module cache_controller (
     assign addr_offset = req_addr_q[3:0];
 
 
+    // Cache hit detection
+    logic cache_hit;
+
+    assign cache_hit =
+        valid_array[addr_index] &&
+        (tag_array[addr_index] == addr_tag);
+
+
 
 endmodule
