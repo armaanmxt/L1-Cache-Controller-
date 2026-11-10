@@ -7,14 +7,14 @@ module cache_controller (
     output logic cpu_req_ready,   //cache is ready to accept: cpu_req_ready = 1
     input logic [31:0] cpu_addr,   // cpu is accessing a 32 bit address, which is split apart into offset, index, and tag bits
 
-    output logic cpu_resp_valid,
-    output logic [31:0] cpu_rdata,         //the actual data word that will be read
+    output logic cpu_resp_valid,          //cache controller says "hey CPU, i finished the request"
+    output logic [31:0] cpu_rdata,         //the actual data word that will be delivered back to the CPU
 
     //Main memory interface (cache miss)
-    output logic         mem_req_valid,
-    output logic [31:0]  mem_req_addr,
+    output logic         mem_req_valid,     //when we know we have a cache miss, so we know we have to get data from main memory
+    output logic [31:0]  mem_req_addr,      // what exact address we need data from in main memory
 
-    input  logic         mem_resp_valid,
+    input  logic         mem_resp_valid,    //drives this high once it has found the required data
     input  logic [127:0] mem_resp_data
 );
 
