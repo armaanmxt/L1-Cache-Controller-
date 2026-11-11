@@ -50,5 +50,17 @@ module cache_controller (
         (tag_array[addr_index] == addr_tag);
 
 
+        // FSM state definitions
+typedef enum logic [1:0] {
+    IDLE,
+    LOOKUP,
+    MISS_WAIT,
+    REFILL
+} state_t;
+
+state_t state, next_state;
+
+
+
 
 endmodule
