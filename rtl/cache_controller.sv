@@ -70,6 +70,15 @@ always_ff @(posedge clk or negedge rst_n) begin
 end
 
 
+// CPU request capture
+always_ff @(posedge clk or negedge rst_n) begin
+    if (!rst_n)
+        req_addr_q <= 32'b0;
+    else if (cpu_req_valid && cpu_req_ready)
+        req_addr_q <= cpu_addr;
+end
+
+
 
 
 endmodule
