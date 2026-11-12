@@ -28,14 +28,14 @@ module cache_controller (
 
     // Cache storage arrays
     logic [127:0] data_array  [0:63];
-    logic [21:0]  tag_array   [0:63];
-    logic         valid_array [0:63];
+    logic [21:0] tag_array   [0:63];
+    logic valid_array [0:63];
 
 
     // Address decoding
     logic [21:0] addr_tag;
-    logic [5:0]  addr_index;
-    logic [3:0]  addr_offset;
+    logic [5:0] addr_index;
+    logic [3:0] addr_offset;
 
     assign addr_tag    = req_addr_q[31:10];
     assign addr_index  = req_addr_q[9:4];
