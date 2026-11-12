@@ -6,3 +6,6 @@ valid bit checking, and a finite state machine for cache refills.
 ![L1 Cache Controller Architecture](docs/cachearchitecture.png)
 
 Made the diagram in excalidraw.com
+
+
+

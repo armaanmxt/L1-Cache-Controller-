@@ -61,6 +61,15 @@ typedef enum logic [1:0] {
 state_t state, next_state;
 
 
+// FSM state register
+always_ff @(posedge clk or negedge rst_n) begin
+    if (!rst_n)
+        state <= IDLE;
+    else
+        state <= next_state;
+end
+
+
 
 
 endmodule
